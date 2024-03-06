@@ -68,6 +68,8 @@ Install them using the following command:
 pip install -r requirements.txt
 ```
 
+Python version : 3.12
+
 ## Screenshot
 
 ![Alt text](image.png)
