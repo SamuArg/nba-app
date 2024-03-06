@@ -16,7 +16,7 @@ class Main:
 
     def update_every_30_seconds(self):
         self.controller.set_standing()
-        #self.controller.set_scoreboard()
+        self.controller.set_scoreboard()
 
 if __name__ == '__main__':
     app = QApplication([])
