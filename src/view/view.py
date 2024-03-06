@@ -7,6 +7,7 @@ class Main_gui(QMainWindow):
     def __init__(self):
         super(Main_gui, self).__init__()
         uic.loadUi('src/view/main.ui', self)
+        self.setWindowTitle('NBA app')
         self.show()
     def clear_scoreboard(self):
         vbox = self.scores
@@ -44,7 +45,7 @@ class Main_gui(QMainWindow):
             #Score and game status
             score_label = QLabel(str(game.score[1]))
             score_label.setAlignment(Qt.AlignVCenter | Qt.AlignRight)
-            score_label.setFont(QFont("Arial", 16))
+            score_label.setFont(QFont('Open Sans', 16))
             hbox.addWidget(score_label)
 
             period_label = QLabel(str(game.period))
@@ -53,7 +54,7 @@ class Main_gui(QMainWindow):
 
             score_label_2 = QLabel(str(game.score[0]))
             score_label_2.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
-            score_label_2.setFont(QFont("Arial", 16))
+            score_label_2.setFont(QFont('Open Sans',16))
             hbox.addWidget(score_label_2)
 
             #Home team Vbox
