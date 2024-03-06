@@ -8,35 +8,48 @@ class Controller:
 
     def set_standing(self):
         east = self.view.east_standing
+        east.clearContents()
+        i = 0
         for team in self.model.conference_standing[0]:
-            row_position = east.rowCount()
-            east.insertRow(row_position)
             name = QTableWidgetItem(team.name)
             name.setTextAlignment(Qt.AlignCenter)
-            east.setItem(row_position, 0, name)
+            east.setItem(i, 0, name)
             wins = QTableWidgetItem(str(team.wins))
             wins.setTextAlignment(Qt.AlignCenter)
-            east.setItem(row_position, 1, wins)
+            east.setItem(i, 1, wins)
             loses = QTableWidgetItem(str(team.loses))
             loses.setTextAlignment(Qt.AlignCenter)
-            east.setItem(row_position, 2, loses)
+            east.setItem(i, 2, loses)
             win_percentage = QTableWidgetItem(str(team.win_percentage))
             win_percentage.setTextAlignment(Qt.AlignCenter)
-            east.setItem(row_position, 3, win_percentage)
-        east.reset()
+            east.setItem(i, 3, win_percentage)
+            i += 1
         west = self.view.west_standing
+        west.clearContents()
+        j = 0
         for team in self.model.conference_standing[1]:
-            row_position = west.rowCount()
-            west.insertRow(row_position)
             name = QTableWidgetItem(team.name)
             name.setTextAlignment(Qt.AlignCenter)
-            west.setItem(row_position, 0, name)
+            west.setItem(j, 0, name)
             wins = QTableWidgetItem(str(team.wins))
             wins.setTextAlignment(Qt.AlignCenter)
-            west.setItem(row_position, 1, wins)
+            west.setItem(j, 1, wins)
             loses = QTableWidgetItem(str(team.loses))
             loses.setTextAlignment(Qt.AlignCenter)
-            west.setItem(row_position, 2, loses)
+            west.setItem(j, 2, loses)
             win_percentage = QTableWidgetItem(str(team.win_percentage))
             win_percentage.setTextAlignment(Qt.AlignCenter)
-            west.setItem(row_position, 3, win_percentage)
+            west.setItem(j, 3, win_percentage)
+            j += 1
+    
+    def set_scoreboard(self):
+        vbox = self.view.scores
+        for game in self.model.scoreboard:
+            hbox = QHBoxLayout()
+            hbox.addWidget(QLabel(game.away_team))
+            hbox.addWidget(QLabel(str(game.score[1])))
+            hbox.addWidget(QLabel(str(game.period)))
+            hbox.addWidget(QLabel(str(game.score[0])))
+            hbox.addWidget(QLabel(game.home_team))
+            vbox.addLayout(hbox)
+
