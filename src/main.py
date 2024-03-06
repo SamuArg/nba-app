@@ -10,4 +10,5 @@ class Main:
 if __name__ == '__main__':
     app = QApplication([])
     main = Main(controller.Controller(view.Main_gui(), model.Model()))
+    main.controller.set_standing()
     app.exec_()
