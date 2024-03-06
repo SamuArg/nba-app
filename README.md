@@ -59,8 +59,8 @@ The project is structured into the following main components:
 
 Ensure you have the following dependencies installed
 
-- PyQt5
-- nba-api
+- [PyQt5](https://pypi.org/project/PyQt5/#:~:text=PyQt5%205.15.10&text=PyQt5%20is%20a%20comprehensive%20set,platforms%20including%20iOS%20and%20Android.)
+- [nba-api](https://github.com/swar/nba_api)
 
 Install them using the following command:
 
@@ -72,7 +72,7 @@ Python version : 3.12
 
 ## Screenshot
 
-![Alt text](image.png)
+![Main page](image.png)
 
 ## License
 
