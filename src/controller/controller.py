@@ -1,7 +1,4 @@
-from model import Team
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt
-from PyQt5 import QtGui
 class Controller:
     def __init__(self, view, model):
         self.view = view
