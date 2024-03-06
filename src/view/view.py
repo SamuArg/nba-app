@@ -48,6 +48,7 @@ class Main_gui(QMainWindow):
             win_percentage.setTextAlignment(Qt.AlignCenter)
             east.setItem(i, 3, win_percentage)
             i += 1
+        east.setEditTriggers(QTableWidget.NoEditTriggers)
         west = self.west_standing
         west.clearContents()
         j = 0
@@ -65,3 +66,4 @@ class Main_gui(QMainWindow):
             win_percentage.setTextAlignment(Qt.AlignCenter)
             west.setItem(j, 3, win_percentage)
             j += 1
+        west.setEditTriggers(QTableWidget.NoEditTriggers)
