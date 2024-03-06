@@ -1,5 +1,5 @@
 from nba_api.stats.endpoints import leaguestandingsv3
-from Team import Team
+from model import Team
 class Standing:
     @staticmethod
     def get_standing():
@@ -7,7 +7,7 @@ class Standing:
         teams = teams.get_dict()['resultSets'][0]['rowSet']
         standing = []
         for i in range(len(teams)):
-            team = Team(name=teams[i][4], city=teams[i][3], wins=teams[i][13],
+            team = Team.Team(name=teams[i][4], city=teams[i][3], wins=teams[i][13],
                          loses=teams[i][14], win_percentage=teams[i][15],
                            rank=i+1, conference=teams[i][6], division=teams[i][10],
                            game_behind=teams[i][38])
