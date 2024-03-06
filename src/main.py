@@ -12,7 +12,7 @@ class Main:
     def setup_timer(self):
         self.timer = QTimer(self.window)
         self.timer.timeout.connect(self.update_every_30_seconds)
-        self.timer.start(30000) 
+        self.timer.start(30000)
 
     def update_every_30_seconds(self):
         self.controller.set_standing()
