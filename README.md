@@ -25,7 +25,7 @@ To set up the project, follow these steps:
 1. Install the required dependencies using the following command:
 
    ```bash
-   pip install PyQt5 nba_api
+   pip install -r requirements.txt
    ```
 
 2. Clone the project repository.
@@ -65,7 +65,7 @@ Ensure you have the following dependencies installed
 Install them using the following command:
 
 ```bash
-pip install PyQt5 nba_api
+pip install -r requirements.txt
 ```
 
 ## Screenshot
