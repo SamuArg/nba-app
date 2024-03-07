@@ -6,18 +6,40 @@ import os
 class Main_gui(QMainWindow):
     def __init__(self):
         super(Main_gui, self).__init__()
-        uic.loadUi('src/view/main.ui', self)
+        ui_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'main.ui'))
+        uic.loadUi(ui_path, self)
         self.setWindowTitle('NBA app')
         self.show()
-    def clear_scoreboard(self):
-        vbox = self.scores
-        while vbox.count():
-            item = vbox.takeAt(0)
 
-            if isinstance(item, QSpacerItem):
-                pass
-            elif item.widget():
-                item.widget().deleteLater()
+    def clear_scoreboard(self):
+        scores_widget = self.scores
+
+        while scores_widget.count():
+            item = scores_widget.takeAt(0)
+
+            if item.widget():
+                widget = item.widget()
+                widget.setParent(None)
+                widget.deleteLater()
+
+            elif item.layout():
+                sub_layout = item.layout()
+                self.clear_layout(sub_layout)
+
+        scores_widget.update()
+
+    def clear_layout(self, layout):
+        while layout.count():
+            item = layout.takeAt(0)
+
+            if item.widget():
+                widget = item.widget()
+                widget.setParent(None)
+                widget.deleteLater()
+
+            elif item.layout():
+                sub_layout = item.layout()
+                self.clear_layout(sub_layout)
 
     def set_scoreboard(self, games):
         script_directory = os.path.dirname(os.path.abspath(__file__))
@@ -116,3 +138,13 @@ class Main_gui(QMainWindow):
             west.setItem(j, 3, win_percentage)
             j += 1
         west.setEditTriggers(QTableWidget.NoEditTriggers)
+        east.resizeColumnsToContents()
+        east.resizeRowsToContents()
+
+        west.resizeColumnsToContents()
+        west.resizeRowsToContents()
+        east.resize(east.horizontalHeader().length() + east.verticalHeader().width() + 5,
+        east.verticalHeader().length() + east.horizontalHeader().height() + 5)
+
+        west.resize(west.horizontalHeader().length() + west.verticalHeader().width() + 5,
+        west.verticalHeader().length() + west.horizontalHeader().height()  + 5)
