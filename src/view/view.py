@@ -53,7 +53,7 @@ class Main_gui(QMainWindow):
             #Away team logo
             away_logo = QLabel()
             away_logo_path = os.path.join(script_directory, 'images', game.away_team + '.png')
-            pixmap = QPixmap(away_logo_path).scaled(60,60, transformMode=Qt.SmoothTransformation)
+            pixmap = QPixmap(away_logo_path).scaled(40,40, transformMode=Qt.SmoothTransformation)
             away_logo.setPixmap(pixmap)
             away_logo.setAlignment(Qt.AlignHCenter)
             away_layout.addWidget(away_logo)
@@ -67,7 +67,7 @@ class Main_gui(QMainWindow):
             #Score and game status
             score_label = QLabel(str(game.score[1]))
             score_label.setAlignment(Qt.AlignVCenter | Qt.AlignRight)
-            score_label.setFont(QFont('Open Sans', 16))
+            score_label.setFont(QFont('Open Sans', 12))
             hbox.addWidget(score_label)
 
             period_label = QLabel(str(game.period))
@@ -76,7 +76,7 @@ class Main_gui(QMainWindow):
 
             score_label_2 = QLabel(str(game.score[0]))
             score_label_2.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
-            score_label_2.setFont(QFont('Open Sans',16))
+            score_label_2.setFont(QFont('Open Sans',12))
             hbox.addWidget(score_label_2)
 
             #Home team Vbox
@@ -85,7 +85,7 @@ class Main_gui(QMainWindow):
             #Home team logo
             home_logo = QLabel()
             home_logo_path = os.path.join(script_directory, 'images', game.home_team + '.png')
-            pixmap = QPixmap(home_logo_path).scaledToWidth(60, Qt.SmoothTransformation)
+            pixmap = QPixmap(home_logo_path).scaled(40,40,transformMode=Qt.SmoothTransformation)
             home_logo.setPixmap(pixmap)
             home_logo.setAlignment(Qt.AlignHCenter)
             home_layout.addWidget(home_logo)

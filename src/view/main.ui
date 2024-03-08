@@ -130,7 +130,7 @@
       <x>30</x>
       <y>90</y>
       <width>401</width>
-      <height>861</height>
+      <height>741</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="scores"/>
