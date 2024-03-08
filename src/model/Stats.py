@@ -1,4 +1,4 @@
-from model import Player
+from .player import Player
 from nba_api.stats.endpoints import leagueleaders
 
 class Stats:
@@ -9,7 +9,7 @@ class Stats:
     def get_players(self):
         players = []
         for player in self.players_list:
-            new_player = Player.Player(name=player[2], points=player[24], assists=player[19], rebounds=player[18], games=player[5])
+            new_player = Player(name=player[2], points=player[24], assists=player[19], rebounds=player[18], games=player[5])
             players.append(new_player)
         return players
     

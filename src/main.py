@@ -1,6 +1,6 @@
-import controller.controller as controller
-import view.view as view
-import model.Model as model
+from controller.controller import Controller
+from view.view import Main_gui
+from model.model import Model
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import QTimer
 class Main:
@@ -19,7 +19,7 @@ class Main:
 
 if __name__ == '__main__':
     app = QApplication([])
-    main = Main(controller.Controller(view.Main_gui(), model.Model()))
+    main = Main(Controller(Main_gui(), Model()))
     main.controller.set_standing()
     main.controller.set_scoreboard()
     main.controller.set_size()
