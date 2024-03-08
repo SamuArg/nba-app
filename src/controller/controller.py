@@ -13,3 +13,5 @@ class Controller:
         games = self.model.scoreboard
         self.view.clear_scoreboard()
         self.view.set_scoreboard(games)
+    def set_size(self):
+        self.view.set_size()

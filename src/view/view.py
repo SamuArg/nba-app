@@ -53,7 +53,7 @@ class Main_gui(QMainWindow):
             #Away team logo
             away_logo = QLabel()
             away_logo_path = os.path.join(script_directory, 'images', game.away_team + '.png')
-            pixmap = QPixmap(away_logo_path).scaledToHeight(60, Qt.SmoothTransformation)
+            pixmap = QPixmap(away_logo_path).scaled(60,60, transformMode=Qt.SmoothTransformation)
             away_logo.setPixmap(pixmap)
             away_logo.setAlignment(Qt.AlignHCenter)
             away_layout.addWidget(away_logo)
@@ -138,13 +138,18 @@ class Main_gui(QMainWindow):
             west.setItem(j, 3, win_percentage)
             j += 1
         west.setEditTriggers(QTableWidget.NoEditTriggers)
+
+    def set_size(self):
+        east = self.east_standing
+        west = self.west_standing
         east.resizeColumnsToContents()
         east.resizeRowsToContents()
-
         west.resizeColumnsToContents()
         west.resizeRowsToContents()
+        east.setColumnWidth(0,west.columnWidth(0))
         east.resize(east.horizontalHeader().length() + east.verticalHeader().width() + 5,
         east.verticalHeader().length() + east.horizontalHeader().height() + 5)
 
         west.resize(west.horizontalHeader().length() + west.verticalHeader().width() + 5,
         west.verticalHeader().length() + west.horizontalHeader().height()  + 5)
+        
