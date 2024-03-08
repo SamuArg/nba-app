@@ -70,7 +70,7 @@ class Main_gui(QMainWindow):
             score_label.setFont(QFont('Open Sans', 12))
             hbox.addWidget(score_label)
 
-            period_label = QLabel(str(game.period))
+            period_label = QLabel(str(game.period).strip())
             period_label.setAlignment(Qt.AlignCenter)
             hbox.addWidget(period_label)
 
