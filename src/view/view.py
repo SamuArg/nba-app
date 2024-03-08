@@ -158,4 +158,9 @@ class Main_gui(QMainWindow):
 
         west.resize(west.horizontalHeader().length() + west.verticalHeader().width() + 5,
         west.verticalHeader().length() + west.horizontalHeader().height()  + 5)
+
+    def set_leaders(self, points_leaders, assists_leaders, rebounds_leaders):
+        self.scoring_list.addItems(points_leaders)
+        self.assists_list.addItems(assists_leaders)
+        self.rebounds_list.addItems(rebounds_leaders)
         

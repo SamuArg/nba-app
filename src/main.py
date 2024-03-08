@@ -23,4 +23,5 @@ if __name__ == '__main__':
     main.controller.set_standing()
     main.controller.set_scoreboard()
     main.controller.set_size()
+    main.controller.set_leaders()
     app.exec_()
