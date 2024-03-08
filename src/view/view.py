@@ -115,9 +115,12 @@ class Main_gui(QMainWindow):
             loses = QTableWidgetItem(str(team.loses))
             loses.setTextAlignment(Qt.AlignCenter)
             east.setItem(i, 2, loses)
+            game_behind = QTableWidgetItem(str(team.game_behind))
+            game_behind.setTextAlignment(Qt.AlignCenter)
+            east.setItem(i,3, game_behind)
             win_percentage = QTableWidgetItem(str(team.win_percentage))
             win_percentage.setTextAlignment(Qt.AlignCenter)
-            east.setItem(i, 3, win_percentage)
+            east.setItem(i, 4, win_percentage)
             i += 1
         east.setEditTriggers(QTableWidget.NoEditTriggers)
         west = self.west_standing
@@ -133,9 +136,12 @@ class Main_gui(QMainWindow):
             loses = QTableWidgetItem(str(team.loses))
             loses.setTextAlignment(Qt.AlignCenter)
             west.setItem(j, 2, loses)
+            game_behind = QTableWidgetItem(str(team.game_behind))
+            game_behind.setTextAlignment(Qt.AlignCenter)
+            west.setItem(j,3, game_behind)
             win_percentage = QTableWidgetItem(str(team.win_percentage))
             win_percentage.setTextAlignment(Qt.AlignCenter)
-            west.setItem(j, 3, win_percentage)
+            west.setItem(j, 4, win_percentage)
             j += 1
         west.setEditTriggers(QTableWidget.NoEditTriggers)
 
