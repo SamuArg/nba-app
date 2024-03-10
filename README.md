@@ -21,17 +21,12 @@ This Python project offers real-time updates on NBA games and team standings. Th
 ## Installation
 
 To set up the project, follow these steps:
-
-1. Install the required dependencies using the following command:
-
+1. Clone the project repository.
+2. Navigate to the project directory.
+3. Install the required dependencies using the following command:
    ```bash
    pip install -r requirements.txt
    ```
-
-2. Clone the project repository.
-
-3. Navigate to the project directory.
-
 4. Run the main script:
 
    ```bash
